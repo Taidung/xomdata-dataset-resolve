@@ -1,4 +1,4 @@
-# Retail SQL Analytics Project
+# Retail SQL
 
 ## Q1: Tổng số đơn hàng năm 2020
 
@@ -8,8 +8,6 @@
 COUNT(DISTINCT order_number)
 ```
 
-### Demo kết quả
-
 | total_orders |
 |--------------|
 | 4,635        |
@@ -18,8 +16,6 @@ COUNT(DISTINCT order_number)
 
 - Ở trong bảng products sẽ chỉ có 1 dòng mô tả cho mỗi sản phẩm gắn theo category.
 - Dùng count(*) để đếm số lượng sản phẩm trong mỗi category.
-
-### Demo kết quả
 
 | category                        | sku |
 |----------------------------------|-----|
@@ -36,8 +32,6 @@ COUNT(DISTINCT order_number)
 
 - Dùng count(*) để đếm số khách hàng nhóm theo từng thành phố, bang, quốc gia và được sắp xếp giảm dần.
 - Dùng top(10) để lấy 10 dòng đầu tiên.
-
-### Demo kết quả
 
 | city         | state              | country        | total_customers |
 |--------------|--------------------|-----------------|-----------------:|
@@ -56,15 +50,11 @@ COUNT(DISTINCT order_number)
 
 - Sử dụng inner join để lấy thông tin của các product có xuất hiện trong bảng sales.
 
-### Demo kết quả
-
 | revenue     |
 |-------------|
 | 651,526.44  |
 
 ## Q5: Số lượng store theo quốc gia
-
-### Demo kết quả
 
 | country         | total_stores |
 |------------------|-------------:|
@@ -86,8 +76,6 @@ COUNT(DISTINCT order_number)
 - partition by category: chia theo category.
 - order by total_quantity desc: sắp xếp giảm dần số lượng.
 - Không dùng luôn cùng where vì where sẽ chạy trước window function.
-
-### Demo kết quả
 
 | category                | product_name                                 | total_quantity | rank_in_category |
 |--------------------------|-----------------------------------------------|----------------:|------------------:|
@@ -120,8 +108,6 @@ COUNT(DISTINCT order_number)
 
 - Dùng round(): làm tròn lấy 2 số phía sau dấu phẩy.
 - nullif(): trả về null nếu giá trị price = 0 => tránh việc chia cho 0.
-
-### Demo kết quả
 
 | subcategory              | total_products | avg_margin |
 |----------------------------|----------------:|------------:|
@@ -157,8 +143,6 @@ COUNT(DISTINCT order_number)
 - datediff(): trả về khoảng cách giữa 2 ngày.
 - cast(): chuyển về decimal vì datediff trả về số nguyên gây mất dữ liệu.
 
-### Demo kết quả
-
 | country         | delivered_orders | avg_delivery_days |
 |------------------|-------------------:|--------------------:|
 | Italy            | 211   | 4.68 |
@@ -174,8 +158,6 @@ COUNT(DISTINCT order_number)
 
 - Group by theo customer_key tránh khách hàng cùng tên.
 - partition by country: chia theo country.
-
-### Demo kết quả
 
 | country         | name               | total_amount |
 |------------------|--------------------|---------------:|
@@ -194,8 +176,6 @@ COUNT(DISTINCT order_number)
 - Những product_key chưa xuất hiện trong sales sẽ trả về null.
 - Có thể dùng exist.
 - Không dùng not in vì với product_key bị null sẽ không so sánh được.
-
-### Demo kết quả
 
 | product_key | product_name                             | brand               | category         |
 |-------------:|---------------------------------------------|----------------------|-------------------|
@@ -230,8 +210,6 @@ COUNT(DISTINCT order_number)
 - year() và month() để lấy năm và tháng của order_date.
 - rows unbounded preceding: cộng dồn giá trị của các dòng phía trước.
 
-### Demo kết quả
-
 | year_month | revenue       | cumulative_revenue |
 |-------------|---------------:|---------------------:|
 | 2019-03     | 845,925.09     | 845,925.09     |
@@ -265,8 +243,6 @@ COUNT(DISTINCT order_number)
 - CTE cohort_size: đếm số lượng customer trong mỗi năm.
 - CTE activity: để xem khách nào còn hoạt động.
 
-### Demo kết quả
-
 | cohort_year | cohort_customers | year_offset | active_customers | retention_pct |
 |-------------:|-------------------:|-------------:|-------------------:|-----------------:|
 | 2016 | 2,561 | 0 | 2,561 | 100    |
@@ -293,8 +269,6 @@ COUNT(DISTINCT order_number)
 - square_meters > 0 để lọc kênh bán online.
 - Sử dụng ntile(4) để chia mỗi cụm thành 4 phần theo số lượng cửa hàng (tứ phân vị).
 
-### Demo kết quả
-
 | store_key | country    | revenue_per_sqm | quartile |
 |-----------:|-------------|------------------:|-----------:|
 | 1  | Australia | 100.08 | 1 |
@@ -318,8 +292,6 @@ COUNT(DISTINCT order_number)
 - sum(case when) để tính tổng revenue theo từng trường hợp 6 tháng trước và 6 tháng sau.
 - isnull biến những trường hợp null thành 0 => cửa hàng không có doanh thu trong 6 tháng sau.
 
-### Demo kết quả
-
 | old_store | new_store | country        | open_date  | revenue_before | revenue_after | change_pct |
 |-----------:|-----------:|-----------------|-------------|-----------------:|-----------------:|-------------:|
 | 20 | 26 | Germany       | 2019-03-05 | 119,660.25 | 40,570.15  | -66.10 |
@@ -341,8 +313,6 @@ COUNT(DISTINCT order_number)
   - tránh ghép 2 product_key giống nhau.
   - tránh ghép một cặp 2 lần.
   - tránh những đơn nhỏ hơn 2 sản phẩm.
-
-### Demo kết quả
 
 | product_a                                       | product_b                                        | times_together | pct    |
 |---------------------------------------------------|----------------------------------------------------|-----------------:|--------:|
