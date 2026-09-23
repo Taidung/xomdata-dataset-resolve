@@ -25,17 +25,16 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  category                          sku
-  ------------------------------- -----
-  Audio                             115
-  Cameras and camcorders            372
-  Cell phones                       285
-  Computers                         606
-  Games and Toys                    166
-  Home Appliances                   661
-  Music, Movies and Audio Books      90
-  TV and Video                      222
-
+| category | sku |
+| --- | --- |
+| Audio | 115 |
+| Cameras and camcorders | 372 |
+| Cell phones | 285 |
+| Computers | 606 |
+| Games and Toys | 166 |
+| Home Appliances | 661 |
+| Music, Movies and Audio Books | 90 |
+| TV and Video | 222 |
 ------------------------------------------------------------------------
 
 ## Q3: Top 10 thành phố có nhiều khách nhất
@@ -46,19 +45,18 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  city           state              country           total_customers
-  -------------- ------------------ --------------- -----------------
-  Toronto        Ontario            Canada                        203
-  New York       New York           United States                 130
-  Los Angeles    California         United States                 119
-  Montreal       Quebec             Canada                         97
-  Chicago        Illinois           United States                  90
-  Houston        Texas              United States                  84
-  Calgary        Alberta            Canada                         70
-  Dallas         Texas              United States                  67
-  Vancouver      British Columbia   Canada                         59
-  Philadelphia   Pennsylvania       United States                  53
-
+| city | state | country | total_customers |
+| --- | --- | --- | --- |
+| Toronto | Ontario | Canada | 203 |
+| New York | New York | United States | 130 |
+| Los Angeles | California | United States | 119 |
+| Montreal | Quebec | Canada | 97 |
+| Chicago | Illinois | United States | 90 |
+| Houston | Texas | United States | 84 |
+| Calgary | Alberta | Canada | 70 |
+| Dallas | Texas | United States | 67 |
+| Vancouver | British Columbia | Canada | 59 |
+| Philadelphia | Pennsylvania | United States | 53 |
 ------------------------------------------------------------------------
 
 ## Q4: Doanh thu tháng 12/2020
@@ -78,18 +76,17 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  country            total_stores
-  ---------------- --------------
-  United States                24
-  Germany                       9
-  France                        7
-  United Kingdom                7
-  Australia                     6
-  Canada                        5
-  Netherlands                   5
-  Italy                         3
-  Online                        1
-
+| country | total_stores |
+| --- | --- |
+| United States | 24 |
+| Germany | 9 |
+| France | 7 |
+| United Kingdom | 7 |
+| Australia | 6 |
+| Canada | 5 |
+| Netherlands | 5 |
+| Italy | 3 |
+| Online | 1 |
 ------------------------------------------------------------------------
 
 ## Q6: Top 5 sản phẩm bán chạy nhất mỗi category
@@ -138,14 +135,13 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  subcategory              total_products   avg_margin
-  ---------------------- ---------------- ------------
-  Digital SLR Cameras                 100        60.44
-  Digital Cameras                     100        57.39
-  Projectors & Screens                103        57.33
-  Movie DVD                            90        57.24
-  Monitors                             78        56.71
-
+| subcategory | total_products | avg_margin |
+| --- | --- | --- |
+| Digital SLR Cameras | 100 | 60.44 |
+| Digital Cameras | 100 | 57.39 |
+| Projectors & Screens | 103 | 57.33 |
+| Movie DVD | 90 | 57.24 |
+| Monitors | 78 | 56.71 |
 ------------------------------------------------------------------------
 
 ## Q8: Thời gian giao hàng trung bình theo quốc gia
@@ -159,14 +155,13 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  country            delivered_orders   avg_delivery_days
-  ---------------- ------------------ -------------------
-  Italy                           211                4.68
-  Canada                          512                4.67
-  United Kingdom                  637                4.64
-  France                          133                4.53
-  United States                  3068                4.52
-
+| country | delivered_orders | avg_delivery_days |
+| --- | --- | --- |
+| Italy | 211 | 4.68 |
+| Canada | 512 | 4.67 |
+| United Kingdom | 637 | 4.64 |
+| France | 133 | 4.53 |
+| United States | 3068 | 4.52 |
 ------------------------------------------------------------------------
 
 ## Q9: Khách VIP mỗi quốc gia
@@ -176,14 +171,13 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  country          name                total_amount
-  ---------------- ----------------- --------------
-  United States    Mie Huus               33,275.47
-  Canada           Tienge Belgrave        20,644.89
-  United Kingdom   Dominic Banks          19,371.06
-  France           Alice Lafond           18,659.88
-  Germany          Daniel Kaestner           17,931
-
+| country | name | total_amount |
+| --- | --- | --- |
+| United States | Mie Huus | 33,275.47 |
+| Canada | Tienge Belgrave | 20,644.89 |
+| United Kingdom | Dominic Banks | 19,371.06 |
+| France | Alice Lafond | 18,659.88 |
+| Germany | Daniel Kaestner | 17,931 |
 ------------------------------------------------------------------------
 
 ## Q10: Sản phẩm zombie (chưa từng bán)
@@ -221,13 +215,12 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-  year_month          revenue   cumulative_revenue
-  ------------ -------------- --------------------
-  2019-03          845,925.09           845,925.09
-  2019-04          149,892.71           995,817.80
-  2019-05        1,594,446.47         2,590,264.27
-  2020-12          651,526.44        23,515,252.48
-
+| year_month | revenue | cumulative_revenue |
+| --- | --- | --- |
+| 2019-03 | 845,925.09 | 845,925.09 |
+| 2019-04 | 149,892.71 | 995,817.80 |
+| 2019-05 | 1,594,446.47 | 2,590,264.27 |
+| 2020-12 | 651,526.44 | 23,515,252.48 |
 ------------------------------------------------------------------------
 
 ## Q12: Cohort retention theo năm mua đầu tiên
@@ -260,14 +253,13 @@ COUNT(DISTINCT order_number)
 
 ### Demo kết quả
 
-    store_key country       revenue_per_sqm   quartile
-  ----------- ----------- ----------------- ----------
-            1 Australia              100.08          1
-            5 Australia               57.77          2
-            6 Australia               55.57          3
-           10 Canada                 162.17          1
-            9 Canada                 129.76          2
-
+| store_key c | untry | revenue_per_sqm | quartile |
+| --- | --- | --- | --- |
+| 1 Australia |  | 100.08 |  |
+| 5 Australia |  | 57.77 |  |
+| 6 Australia |  | 55.57 |  |
+| 10 Canada |  | 162.17 | 1 |
+| 9 Canada |  | 129.76 |  |
 ------------------------------------------------------------------------
 
 ## Q14: Store cannibalization
