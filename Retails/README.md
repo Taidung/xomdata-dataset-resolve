@@ -116,8 +116,6 @@ COUNT(DISTINCT order_number)
 | Games and Toys            | MGS Hand Games for Office worker L29…          | 280 | 3 |
 | Games and Toys            | SV Hand Games men M30 Silver                   | 274 | 4 |
 
-> Ghi chú: một số tên sản phẩm bị cắt bởi độ rộng cột trong ảnh gốc (đánh dấu bằng `…`). Bảng cũng chỉ hiển thị đến rank 4 của "Games and Toys" và chưa có 3 category còn lại (Home Appliances, Music/Movies/Audio Books, TV and Video) vì phần đó nằm ngoài khung ảnh bạn gửi — gửi thêm ảnh nếu cần bổ sung đầy đủ.
-
 ## Q7: Margin gross theo subcategory
 
 - Dùng round(): làm tròn lấy 2 số phía sau dấu phẩy.
@@ -225,8 +223,6 @@ COUNT(DISTINCT order_number)
 | 2,230 | WWI Floor Lamp X115 Black                | Wide World Impor…       | Home Appliances |
 | 2,234 | WWI Wall Lamp E215 Black                 | Wide World Impor…       | Home Appliances |
 | 2,251 | WWI Wall Lamp E315 Silver                | Wide World Impor…       | Home Appliances |
-
-> Ghi chú: cột "brand" của các dòng WWI bị cắt trong ảnh gốc ("Wide World Impor…"), khả năng cao đầy đủ là "Wide World Importers".
 
 ## Q11: Doanh thu tháng + doanh thu tích luỹ 24 tháng
 
